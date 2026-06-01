@@ -7,6 +7,9 @@ import java.util.stream.Collectors;
 
 /**
  * DTO 转换工具 — 实体→DTO 批量 / 分页转换。
+ *
+ * <p>推荐新代码使用 MapStruct：继承 {@link com.example.scaffold.common.mapper.EntityMapper} 即可获得编译期类型安全的映射。
+ * 本类保留用于 Lambda 快速转换和遗留兼容。
  */
 public final class DtoConverter {
 

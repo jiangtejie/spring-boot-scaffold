@@ -20,6 +20,9 @@
     <properties>
         <java.version>21</java.version>
         <mybatis-flex.version>1.11.6</mybatis-flex.version>
+        <hutool.version>5.8.38</hutool.version>
+        <mapstruct.version>1.6.3</mapstruct.version>
+        <guava.version>33.4.6-jre</guava.version>
     </properties>
 
     <dependencies>
@@ -107,6 +110,27 @@
             <version>3.0.0</version>
         </dependency>
 
+        <!-- Hutool 全功能工具库 -->
+        <dependency>
+            <groupId>cn.hutool</groupId>
+            <artifactId>hutool-all</artifactId>
+            <version>${hutool.version}</version>
+        </dependency>
+
+        <!-- MapStruct 编译期 Bean 映射 -->
+        <dependency>
+            <groupId>org.mapstruct</groupId>
+            <artifactId>mapstruct</artifactId>
+            <version>${mapstruct.version}</version>
+        </dependency>
+
+        <!-- Guava 集合/缓存/事件总线 -->
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>${guava.version}</version>
+        </dependency>
+
         <!-- Lombok -->
         <dependency>
             <groupId>org.projectlombok</groupId>
@@ -158,6 +182,11 @@
                                     <artifactId>mybatis-flex-processor</artifactId>
                                     <version>${mybatis-flex.version}</version>
                                 </path>
+                                <path>
+                                    <groupId>org.mapstruct</groupId>
+                                    <artifactId>mapstruct-processor</artifactId>
+                                    <version>${mapstruct.version}</version>
+                                </path>
                             </annotationProcessorPaths>
                         </configuration>
                     </execution>
@@ -178,6 +207,11 @@
                                     <groupId>com.mybatis-flex</groupId>
                                     <artifactId>mybatis-flex-processor</artifactId>
                                     <version>${mybatis-flex.version}</version>
+                                </path>
+                                <path>
+                                    <groupId>org.mapstruct</groupId>
+                                    <artifactId>mapstruct-processor</artifactId>
+                                    <version>${mapstruct.version}</version>
                                 </path>
                             </annotationProcessorPaths>
                         </configuration>
