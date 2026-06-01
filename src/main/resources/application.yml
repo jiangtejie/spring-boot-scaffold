@@ -1,6 +1,10 @@
 spring:
   application:
     name: scaffold
+  cache:
+    type: caffeine
+    caffeine:
+      spec: maximumSize=1000,expireAfterWrite=5m
   jackson:
     time-zone: Asia/Shanghai
     date-format: yyyy-MM-dd HH:mm:ss
@@ -26,6 +30,7 @@ spring:
       password: ${REDIS_PASSWORD:}
       database: ${REDIS_DATABASE:0}
       timeout: ${REDIS_TIMEOUT:3s}
+  # Redisson 复用 spring.redis 连接，无需额外配置
 
 server:
   port: ${SERVER_PORT:8080}
@@ -78,3 +83,43 @@ mybatis-flex:
   type-aliases-package: com.example.scaffold.domain
   configuration:
     map-underscore-to-camel-case: true
+
+# ===== JustAuth 第三方登录 =====
+justauth:
+  enabled: true
+  type:
+    github:
+      client-id: ${GITHUB_CLIENT_ID:}
+      client-secret: ${GITHUB_CLIENT_SECRET:}
+      redirect-uri: ${GITHUB_REDIRECT_URI:http://localhost:8080/api/auth/oauth/github/callback}
+    gitee:
+      client-id: ${GITEE_CLIENT_ID:}
+      client-secret: ${GITEE_CLIENT_SECRET:}
+      redirect-uri: ${GITEE_REDIRECT_URI:http://localhost:8080/api/auth/oauth/gitee/callback}
+  cache:
+    type: redis
+
+# ===== AJ-Captcha 验证码 =====
+aj:
+  captcha:
+    type: default
+    water-mark: Scaffold
+    sliding-block:
+      enabled: true
+
+# ===== Dynamic Datasource 多数据源示例 =====
+# 启用后使用 @DS("slave") 切换数据源
+# spring:
+#   datasource:
+#     dynamic:
+#       primary: master
+#       strict: false
+#       datasource:
+#         master:
+#           url: jdbc:mysql://127.0.0.1:3306/scaffold
+#           username: root
+#           password: root
+#         slave:
+#           url: jdbc:mysql://127.0.0.1:3306/scaffold_readonly
+#           username: root
+#           password: root

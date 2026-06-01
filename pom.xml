@@ -23,6 +23,12 @@
         <hutool.version>5.8.38</hutool.version>
         <mapstruct.version>1.6.3</mapstruct.version>
         <guava.version>33.4.6-jre</guava.version>
+        <redisson.version>4.4.0</redisson.version>
+        <easyexcel.version>4.0.3</easyexcel.version>
+        <justauth.version>1.4.0</justauth.version>
+        <captcha.version>1.4.0</captcha.version>
+        <ip2region.version>3.3.7</ip2region.version>
+        <dynamic-ds.version>4.5.0</dynamic-ds.version>
     </properties>
 
     <dependencies>
@@ -124,7 +130,59 @@
             <version>${mapstruct.version}</version>
         </dependency>
 
-        <!-- Guava 集合/缓存/事件总线 -->
+        <!-- Spring Cache + Caffeine 本地缓存 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-cache</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.github.ben-manes.caffeine</groupId>
+            <artifactId>caffeine</artifactId>
+        </dependency>
+
+        <!-- Redisson 分布式锁/集合 -->
+        <dependency>
+            <groupId>org.redisson</groupId>
+            <artifactId>redisson-spring-boot-starter</artifactId>
+            <version>${redisson.version}</version>
+        </dependency>
+
+        <!-- EasyExcel 百万级 Excel 读写 -->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>easyexcel</artifactId>
+            <version>${easyexcel.version}</version>
+        </dependency>
+
+        <!-- JustAuth 第三方 OAuth 登录 -->
+        <dependency>
+            <groupId>com.xkcoding.justauth</groupId>
+            <artifactId>justauth-spring-boot-starter</artifactId>
+            <version>${justauth.version}</version>
+        </dependency>
+
+        <!-- AJ-Captcha 行为验证码 -->
+        <dependency>
+            <groupId>com.anji-plus</groupId>
+            <artifactId>captcha-spring-boot-starter</artifactId>
+            <version>${captcha.version}</version>
+        </dependency>
+
+        <!-- Ip2region 离线 IP 归属地 -->
+        <dependency>
+            <groupId>org.lionsoul</groupId>
+            <artifactId>ip2region</artifactId>
+            <version>${ip2region.version}</version>
+        </dependency>
+
+        <!-- Dynamic Datasource 多数据源 -->
+        <dependency>
+            <groupId>com.baomidou</groupId>
+            <artifactId>dynamic-datasource-spring-boot3-starter</artifactId>
+            <version>${dynamic-ds.version}</version>
+        </dependency>
+
+        <!-- Guava 集合/事件总线 -->
         <dependency>
             <groupId>com.google.guava</groupId>
             <artifactId>guava</artifactId>

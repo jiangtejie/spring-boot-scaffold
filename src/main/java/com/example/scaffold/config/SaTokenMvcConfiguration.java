@@ -20,6 +20,8 @@ public class SaTokenMvcConfiguration implements WebMvcConfigurer {
                                 .notMatch("/api/system/ping")
                                 .notMatch("/api/system/health")
                                 .notMatch("/api/ext/**")
+                                .notMatch("/api/auth/oauth/**")
+                                .notMatch("/api/captcha/**")
                                 .check(r -> StpUtil.checkLogin())))
                 .addPathPatterns("/**")
                 .excludePathPatterns("/error");
