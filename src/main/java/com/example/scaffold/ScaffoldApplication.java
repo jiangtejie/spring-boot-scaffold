@@ -3,7 +3,6 @@ package com.example.scaffold;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.cache.annotation.EnableCaching;
 
 /**
  * Spring Boot 后端脚手架启动入口。
@@ -24,7 +23,6 @@ import org.springframework.cache.annotation.EnableCaching;
  * {@code module/} 下新建业务模块即可。
  */
 @SpringBootApplication
-@EnableCaching
 @MapperScan("com.example.scaffold.persistence.mapper")
 public class ScaffoldApplication {
 
