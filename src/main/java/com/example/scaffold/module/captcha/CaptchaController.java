@@ -1,9 +1,9 @@
 package com.example.scaffold.module.captcha;
 
-import com.anji.captcha.model.common.ResponseModel;
 import com.anji.captcha.model.vo.CaptchaVO;
 import com.anji.captcha.service.CaptchaService;
-import com.example.scaffold.common.web.WebResponses;
+import com.example.scaffold.common.api.ApiResult;
+import com.example.scaffold.common.api.ApiResults;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
@@ -25,13 +25,13 @@ public class CaptchaController {
 
     @Operation(summary = "获取验证码")
     @PostMapping("/get")
-    public ResponseModel get(@RequestBody CaptchaVO vo) {
-        return captchaService.get(vo);
+    public ApiResult<?> get(@RequestBody CaptchaVO vo) {
+        return ApiResults.ok(captchaService.get(vo));
     }
 
     @Operation(summary = "校验验证码")
     @PostMapping("/check")
-    public ResponseModel check(@RequestBody CaptchaVO vo) {
-        return captchaService.check(vo);
+    public ApiResult<?> check(@RequestBody CaptchaVO vo) {
+        return ApiResults.ok(captchaService.check(vo));
     }
 }

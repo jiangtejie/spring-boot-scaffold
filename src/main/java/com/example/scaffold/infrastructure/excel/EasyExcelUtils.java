@@ -1,4 +1,4 @@
-package com.example.scaffold.common.excel;
+package com.example.scaffold.infrastructure.excel;
 
 import com.alibaba.excel.EasyExcel;
 import com.alibaba.excel.write.style.column.LongestMatchColumnWidthStyleStrategy;

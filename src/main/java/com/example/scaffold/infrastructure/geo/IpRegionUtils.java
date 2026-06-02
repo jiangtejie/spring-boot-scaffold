@@ -1,4 +1,4 @@
-package com.example.scaffold.common.geo;
+package com.example.scaffold.infrastructure.geo;
 
 import lombok.extern.slf4j.Slf4j;
 import org.lionsoul.ip2region.xdb.Searcher;

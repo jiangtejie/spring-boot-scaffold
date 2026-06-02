@@ -1,6 +1,7 @@
 package com.example.scaffold.module.extapi;
 
 import com.example.scaffold.common.api.ApiResult;
+import com.example.scaffold.common.api.ApiResults;
 import com.example.scaffold.common.error.AppErrorCode;
 import com.example.scaffold.config.AppProperties;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -99,7 +100,7 @@ public class ExtApiSignFilter extends OncePerRequestFilter {
     private void sendError(HttpServletResponse response, AppErrorCode errorCode) throws IOException {
         response.setStatus(errorCode.getStatusCode().value());
         response.setContentType("application/json;charset=UTF-8");
-        ApiResult<Void> result = new ApiResult<>(errorCode.getCode(), errorCode.getDefaultMessage(), null);
+        ApiResult<Void> result = ApiResults.fail(errorCode.getCode(), errorCode.getDefaultMessage());
         response.getWriter().write(objectMapper.writeValueAsString(result));
     }
 }

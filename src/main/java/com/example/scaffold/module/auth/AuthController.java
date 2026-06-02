@@ -1,6 +1,8 @@
 package com.example.scaffold.module.auth;
 
 import cn.dev33.satoken.stp.StpUtil;
+import com.example.scaffold.common.api.ApiResult;
+import com.example.scaffold.common.api.ApiResults;
 import com.example.scaffold.common.web.WebResponses;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
@@ -32,10 +34,10 @@ public class AuthController {
 
     @Operation(summary = "获取授权 URL")
     @GetMapping("/{source}")
-    public String authorize(@PathVariable String source) {
+    public ApiResult<String> authorize(@PathVariable String source) {
         AuthRequest request = authRequestMap.get(source.toUpperCase());
         if (request == null) throw new IllegalArgumentException("不支持的登录来源: " + source);
-        return request.authorize(AuthStateUtils.createState());
+        return ApiResults.ok(request.authorize(AuthStateUtils.createState()));
     }
 
     @Operation(summary = "OAuth 回调")

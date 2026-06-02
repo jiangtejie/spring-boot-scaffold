@@ -147,6 +147,14 @@
             <version>${redisson.version}</version>
         </dependency>
 
+        <!-- Dynamic Datasource 多数据源（可选，启用时取消 yml 注释） -->
+        <dependency>
+            <groupId>com.baomidou</groupId>
+            <artifactId>dynamic-datasource-spring-boot3-starter</artifactId>
+            <version>${dynamic-ds.version}</version>
+            <scope>runtime</scope>
+        </dependency>
+
         <!-- EasyExcel 百万级 Excel 读写 -->
         <dependency>
             <groupId>com.alibaba</groupId>
@@ -173,13 +181,6 @@
             <groupId>org.lionsoul</groupId>
             <artifactId>ip2region</artifactId>
             <version>${ip2region.version}</version>
-        </dependency>
-
-        <!-- Dynamic Datasource 多数据源 -->
-        <dependency>
-            <groupId>com.baomidou</groupId>
-            <artifactId>dynamic-datasource-spring-boot3-starter</artifactId>
-            <version>${dynamic-ds.version}</version>
         </dependency>
 
         <!-- Guava 集合/事件总线 -->

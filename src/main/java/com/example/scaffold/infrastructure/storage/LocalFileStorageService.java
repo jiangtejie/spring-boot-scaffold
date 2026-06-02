@@ -13,6 +13,7 @@ import java.nio.file.StandardCopyOption;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 import java.util.UUID;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -30,7 +31,7 @@ import org.springframework.web.multipart.MultipartFile;
 public class LocalFileStorageService implements StorageService {
 
     private static final long MAX_IMAGE_BYTES = 10L * 1024 * 1024;
-    private static final java.util.Set<String> ALLOWED_EXTENSIONS = java.util.Set.of(".jpg", ".jpeg", ".png", ".gif");
+    private static final Set<String> ALLOWED_EXTENSIONS = Set.of(".jpg", ".jpeg", ".png", ".gif");
 
     private final AppProperties appProperties;
 

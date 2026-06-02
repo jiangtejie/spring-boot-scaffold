@@ -1,4 +1,4 @@
-package com.example.scaffold.common.excel;
+package com.example.scaffold.infrastructure.excel;
 
 import com.alibaba.excel.context.AnalysisContext;
 import com.alibaba.excel.event.AnalysisEventListener;
