@@ -11,7 +11,7 @@
         <relativePath/>
     </parent>
 
-    <groupId>com.example</groupId>
+    <groupId>com.lxjl</groupId>
     <artifactId>scaffold</artifactId>
     <version>1.0.0</version>
     <name>scaffold</name>

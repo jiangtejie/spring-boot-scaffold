@@ -65,7 +65,7 @@ app:
     secret: ${EXTERNAL_API_SECRET:}
 
 springdoc:
-  packages-to-scan: com.example.scaffold
+  packages-to-scan: com.lxjl.scaffold
   api-docs:
     path: /v3/api-docs
   swagger-ui:
@@ -75,7 +75,7 @@ springdoc:
 
 mybatis-flex:
   mapper-locations: classpath*:/mapper/**/*.xml
-  type-aliases-package: com.example.scaffold.domain
+  type-aliases-package: com.lxjl.scaffold.domain
   configuration:
     map-underscore-to-camel-case: true
 
