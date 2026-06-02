@@ -35,9 +35,6 @@ Thumbs.db
 # ===== Upload =====
 uploads/
 
-# ===== Ip2region 离线数据库（63MB，需手动下载） =====
-src/main/resources/ip2region/ip2region.xdb
-
 # ===== Build =====
 *.pid
 *.seed
